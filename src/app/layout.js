@@ -1,4 +1,7 @@
-import './globals.css'
+import Head from 'next/head';
+import { Footer, NavBar } from '../../components';
+import './globals.css';
+       
 
 export const metadata = {
   title: 'Ecommerce',
@@ -7,8 +10,22 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
-    </html>
-  )
+    <div className='layout'>
+      <Head>
+        <title>MoMo Store</title>
+      </Head>
+
+      <header>
+        <NavBar/>
+      </header>
+
+      <main className='main-container'>
+        {children}
+      </main>
+
+      <footer>
+        <Footer/>
+      </footer>
+    </div>
+)
 }
